@@ -54,7 +54,7 @@ if user_input:
         if "tuần trước" in user_input.lower():
             revenue = get_last_week_revenue(orders)
             
-            plot = plot_revenue_by_product(orders, lines)
+            plot = plot_revenue_by_product(lines)
             st.pyplot(plot)
             
             assistant_reply = f"✅ Doanh thu tuần trước là {revenue:,.0f} VND"
@@ -62,7 +62,7 @@ if user_input:
         elif "tháng này" in user_input.lower():
             revenue = get_this_month_revenue(orders)
             
-            plot = plot_revenue_by_product(orders, lines)
+            plot = plot_revenue_by_product(lines)
             st.pyplot(plot)
             
             assistant_reply = f"🧾 Doanh thu tháng này là {revenue:,.0f} VND"
