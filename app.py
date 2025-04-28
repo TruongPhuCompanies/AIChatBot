@@ -5,7 +5,9 @@ from dao import get_last_week_revenue, get_this_month_revenue
 import openai, os
 from eda import plot_revenue_by_product
 
-openai.api_key = st.secrets["openai"]["api_key"]
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+st.write(os.getenv('OPENAI_API_KEY'))
 
 common, uid, models = get_odoo_connection()
 
